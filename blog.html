@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Bárbara Martínez- Digital Marketing & Business</title>
+
+    <link rel="icon" type="image/x-icon" href="images/BMW_logo.png">
+
+    <!-- For modern browsers, you can also add: -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/BMW_logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/BMW_logo.png">
+
+    <!-- For Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/BMW_logo.png">
+
+    <!-- Optional manifest file for PWA -->
+    <link rel="manifest" href="images/BMW_logo.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <!-- Navigation (Same as main page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="nav-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/BMW_logo.png" alt="Your Brand Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contacto</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header section -->
+<header class="blog-header py-5" id="blog-title">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="display-4 fw-bold text-primary mb-3">Retrovisor BMW</h1>
+                <p class="lead mb-4">Banderín, rutas y conocimientos expertos para el crecimiento de los negocios online</p>
+                <div class="header-accent"></div>
+            </div>
+            <div class="col-lg-5">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image">
+                        <img src="images/rose.jpg" alt="Profile" class="img-fluid">
+                        <div class="image-accent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Featured Post -->
+    <section class="featured-post py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card featured-card border-0">
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <img src="images/shubham-dhage-En2DKVAb1SU-unsplash.jpg" class="img-fluid rounded-start" alt="Featured Post">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body p-4">
+                                    <div class="featured-badge mb-2">Premium</div>
+                                    <h2 class="card-title h3">The Future of Digital Marketing in 2024</h2>
+                                    <p class="text-muted mb-2">December 4, 2024 • 5 min read</p>
+                                    <p class="card-text">Explore the latest trends and innovations shaping the future of digital marketing. From AI-driven strategies to emerging social platforms...</p>
+                                    <a href="blogs/article1.html" class="btn btn-custom featured-badge">Avanza</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Blog Grid -->
+    <section class="blog-grid py-5">
+    <div class="container">
+        <div class="row g-4" id="posts-container">
+            <!-- Initial posts will be loaded here -->
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="text-center mt-4" style="display: none;">
+            <div class="spinner-border text-custom" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-5">
+            <button id="load-more" class="btn btn-custom btn-lg">Explora más Rutas</button>
+        </div>
+    </div>
+</section>
+
+    <!-- Newsletter Section -->
+
+    <div id="custom-success-message" style="display: none;" class="text-center mt-4">
+    <div class="alert alert-success">
+        <i class="fas fa-check-circle me-2"></i>
+        ¡Gracias por suscribirte! Me pondré en contacto contigo pronto.
+    </div>
+</div>
+
+
+
+<div id="mc_embed_signup" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <!-- Success message (hidden by default) -->
+                <div id="success-message" style="display: none;">
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i>
+                        ¡ Gracias por subirte a bordo! Nos esperan kilómetros de éxitos
+
+                    </div>
+                </div>
+
+                <!-- Form (shown by default) -->
+                <div id="subscription-form">
+                    <h2 class="h3 mb-4">Suscríbete a mi Viaje</h2>
+                    <p class="mb-4">Súbete y recibe 15 minutos de consultoría gratuita + guía para crecer en redes sociales.</p>
+                    <form id="mc-embedded-subscribe-form" class="validate newsletter-form">
+                        <div class="mc-field-group input-group mb-3">
+                            <input type="email"
+                                   name="EMAIL"
+                                   class="form-control required email"
+                                   id="mce-EMAIL"
+                                   placeholder="¿Qué correo conducirá este viaje a tu bandeja?"
+                                   required>
+                            <button type="submit"
+                                    name="subscribe"
+                                    id="mc-embedded-subscribe"
+                                    class="btn btn-custom">
+                                Súbete
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Footer (Same as main page) -->
+    <footer class="py-4 bg-custom-dark text-white">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Bárbara Martínez. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+
+<!-- Submit form to Mailchimp -->
+<script>
+document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+
+    const email = document.getElementById('mce-EMAIL').value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   if (!emailRegex.test(email)) {
+       alert('Please enter a valid email address');
+       return;
+   }
+
+    // Hide the form
+    document.getElementById('subscription-form').style.display = 'none';
+
+    // Show the success message
+    document.getElementById('success-message').style.display = 'block';
+
+    const formData = new FormData(this);
+    fetch('https://github.us3.list-manage.com/subscribe/post?u=2ce63840d1519c7566023afc4&id=2955c9458d&f_id=0050e4e3f0', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+    });
+});
+</script>
+
+
+
+
+<script>
+// Blog posts data
+const blogPosts = [
+    {
+        image: "images/cheng-lin-A1Y1KRh9qoU-unsplash.jpg",
+        category: "Strategy",
+        title: "Content Marketing Strategies That Drive Results",
+        date: "November 28, 2024",
+        readTime: "3 min read",
+        description: "Learn how to create content that engages your audience and drives measurable business results...",
+        link: "blogs/article2.html"
+    },
+    {
+        image: "images/laram-vStAYPFjpM4-unsplash.jpg",
+        category: "Analytics",
+        title: "Understanding Your Marketing Analytics",
+        date: "November 25, 2024",
+        readTime: "4 min read",
+        description: "A comprehensive guide to interpreting your marketing data and making data-driven decisions...",
+        link: "blogs/article3.html"
+    },
+    {
+        image: "images/samsung-memory-l_p4pay8CTM-unsplash.jpg",
+        category: "Social Media",
+        title: "Mastering Social Media Marketing",
+        date: "November 22, 2024",
+        readTime: "3 min read",
+        description: "Tips and techniques for building a strong social media presence and engaging with your audience...",
+        link: "blogs/article4.html"
+    }
+
+    // Add more posts here
+];
+
+let currentPage = 0;
+const postsPerPage = 3;
+const container = document.getElementById('posts-container');
+const loadMoreBtn = document.getElementById('load-more');
+const loadingSpinner = document.getElementById('loading-spinner');
+
+// Function to create post HTML
+function createPostHTML(post) {
+    return `
+        <div class="col-lg-4 col-md-6">
+            <article class="card blog-card h-100">
+                <img src="${post.image}" class="card-img-top" alt="${post.title}">
+                <div class="card-body">
+                    <div class="post-category mb-2">${post.category}</div>
+                    <h3 class="card-title h5">${post.title}</h3>
+                    <p class="text-muted small mb-2">${post.date} • ${post.readTime}</p>
+                    <p class="card-text">${post.description}</p>
+                    <a href="${post.link}" class="btn btn-link text-custom p-0">Avanza <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </article>
+        </div>
+    `;
+}
+
+// Function to load posts
+function loadPosts() {
+    loadingSpinner.style.display = 'block';
+    loadMoreBtn.style.display = 'none';
+
+    // Simulate loading delay
+    setTimeout(() => {
+        const startIndex = currentPage * postsPerPage;
+        const endIndex = startIndex + postsPerPage;
+        const postsToShow = blogPosts.slice(startIndex, endIndex);
+
+        postsToShow.forEach(post => {
+            container.innerHTML += createPostHTML(post);
+        });
+
+        currentPage++;
+        loadingSpinner.style.display = 'none';
+
+        // Show/hide load more button based on remaining posts
+        if (currentPage * postsPerPage >= blogPosts.length) {
+            loadMoreBtn.style.display = 'none';
+        } else {
+            loadMoreBtn.style.display = 'block';
+        }
+    }, 800); // Simulated delay of 800ms
+}
+
+// Initial load
+loadPosts();
+
+// Load more button click handler
+loadMoreBtn.addEventListener('click', loadPosts);
+
+// Optional: Implement scroll-based loading
+function handleScroll() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 1000) {
+        if (currentPage * postsPerPage < blogPosts.length && loadingSpinner.style.display !== 'block') {
+            loadPosts();
+        }
+    }
+}
+
+// Uncomment the next line if you want scroll-based loading instead of button
+// window.addEventListener('scroll', handleScroll);
+</script>
+
+
+
+
